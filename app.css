@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: poppins;
+	height: 100vh;
+	margin: 0;
+	background-color: #F0EEF1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+button {
+	font-family: inherit;
+	height: 35px;
+	background-color: #F0EEF1;
+	border-style: none;
+	border-radius: 7px;
+}
+.header {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+	background-color: white;
+	margin-bottom: 10px;
+	font-size: 20px;
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1) ;
+}
+#add-book {
+	background-color: #867070;
+	color: white;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+#add-book:active {
+	transform: translateY(2px);
+}
+h3 {
+	margin: 0;
+}
+.pop-up {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	display: flex;
+	transition: 200ms ease-in-out;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	padding: 10px;
+	width: 200px;
+	border-radius: 7px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	background-color: #F0EEF1;
+	z-index: 10;
+}
+.active1 {
+	transform: translate(-50%, -50%)  scale(1);
+}
+.pop-up input {
+	padding: 7px;
+	font-family: inherit;
+	border: none;
+	border-radius: 7px;
+	outline: none;
+}
+.pop-up input[type=text] {
+	width: 95%;
+}
+#submit {
+	background-color: #9FFF9C;
+	width: 95%;
+}
+#submit:active {
+	transform: scale(98%);
+}
+#overlay {
+	position: absolute;
+	transition: 200ms ease-in-out;
+	opacity: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* right: 0;
+	bottom: 0; */
+	width: 0%;
+	height: 0%;
+	background-color: rgba(116, 116, 116, 0.5);
+	z-index: 5;
+	/* pointer-events: none; */
+}
+.active {
+	pointer-events: 1;
+}
+.book-info {
+	margin-top: 25px;
+	border-radius: 7px;
+	background-color: white;
+	width: 295px;
+	flex-direction: column;
+	gap: 15px;
+	height: 225px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid black; */
+}
+.remove {
+	width: 95%;
+}
+.read {
+	background-color: #9FFF9C;
+	width: 95%;
+}
+
+.books {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 0 200px;
+    flex-wrap: wrap;
+}
