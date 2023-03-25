@@ -7,6 +7,8 @@ const popup = document.querySelector('.pop-up');
 const check = document.getElementById('check');
 const books = document.querySelector('.books');
 const overlay = document.getElementById('overlay');
+const input = document.querySelectorAll('input:not(#submit)');
+let i = 0;
 
 openPopUp.addEventListener(('click'),() => {
 	if (popup == null) return ;
@@ -14,6 +16,8 @@ openPopUp.addEventListener(('click'),() => {
 	overlay.style.width = "100%";
 	overlay.style.height = "100%";
 	overlay.style.opacity = "1";
+	input.forEach(inpu => { inpu.value = ""; })
+	check.checked = false;
 })
 
 document.addEventListener('click', function(event) {
@@ -42,12 +46,26 @@ submit.addEventListener('click', ()=> {
 	<div>${newBook.author}</div>
 	<div>${newBook.title}</div>
 	<div>${newBook.pages} pages</div>
-	<button class="read">${newBook.read}</button>
+	<button class="readd${i}">${newBook.read}</button>
 	<button class="remove">remove</button>`
 	books.appendChild(element);
 	popup.classList.remove('active1');
+	const readf = document.querySelector(`.readd${i}`);
+	readf.style.width = '95%';
+	if (check.checked)
+		readf.classList.add('read');
+	else
+		readf.classList.add('read1');
+	const removeButton = element.querySelector('.remove');
+	i++;
+	console.log(i);
 	overlay.style.width = "0%";
 	overlay.style.height = "0%";
 	overlay.style.opacity = "0";
 })
 
+document.addEventListener('click', (event) => {
+	if (event.target && event.target.classList.contains('remove')) {
+	  event.target.parentNode.remove();
+	}
+  });

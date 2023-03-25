@@ -86,7 +86,7 @@ h3 {
 }
 #overlay {
 	position: absolute;
-	transition: 200ms ease-in-out;
+	/* transition: 200ms ease-in-out; */
 	opacity: 0;
 	top: 50%;
 	left: 50%;
@@ -113,16 +113,22 @@ h3 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* border: 1px solid black; */
 }
 .remove {
 	width: 95%;
+}
+.remove:hover {
+	background-color: rgb(191, 189, 189);
 }
 .read {
 	background-color: #9FFF9C;
 	width: 95%;
 }
+.read1 {
+	background-color: #e68d8d;
+	width: 95%;
 
+}
 .books {
 	display: flex;
     justify-content: center;
@@ -131,4 +137,7 @@ h3 {
     gap: 20px;
     padding: 0 200px;
     flex-wrap: wrap;
+}
+#pages {
+	width: 95%;
 }
